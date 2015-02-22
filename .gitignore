@@ -1,4 +1,5 @@
 # Compiled Object files
+build/
 *.slo
 *.lo
 *.o
@@ -23,6 +24,13 @@
 *.lib
 
 # Executables
+bin/
 *.exe
 *.out
 *.app
+
+# External Resources
+res/
+
+# Execution working directories
+run/
