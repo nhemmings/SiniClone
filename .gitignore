@@ -30,7 +30,7 @@ bin/
 *.app
 
 # External Resources
-res/
+# res/
 
 # Execution working directories
 run/
