@@ -71,6 +71,7 @@
 		<Unit filename="include/physics/particle.hpp" />
 		<Unit filename="include/physics/precision.hpp" />
 		<Unit filename="src/main.cpp" />
+		<Unit filename="src/physics/particle.cpp" />
 		<Extensions>
 			<code_completion />
 			<debugger />
