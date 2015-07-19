@@ -66,6 +66,10 @@
 			<Add directory="lib" />
 			<Add directory="res/SFML/lib" />
 		</Linker>
+		<Unit filename="include/physics/Vector2D.hpp" />
+		<Unit filename="include/physics/Vector3D.hpp" />
+		<Unit filename="include/physics/particle.hpp" />
+		<Unit filename="include/physics/precision.hpp" />
 		<Unit filename="src/main.cpp" />
 		<Extensions>
 			<code_completion />
