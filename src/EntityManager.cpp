@@ -1,0 +1,41 @@
+#include "EntityManager.hpp"
+
+EntityManager::EntityManager(sf::Window& window) :  m_Window(window),
+                                                    m_CoordAdapter(window.getSize()),
+                                                    m_nextID(0)
+{
+    //ctor
+}
+
+EntityManager::~EntityManager()
+{
+    //dtor
+}
+
+int EntityManager::getNextID() {
+    return m_nextID++;
+}
+
+inline float EntityManager::SFMLCoordAdapter::physToWindowX(const float x) const {
+    return x;
+}
+
+inline float EntityManager::SFMLCoordAdapter::physToWindowY(const float y) const {
+    return (m_WindowSize.y - y);
+}
+
+inline Vector2u EntityManager::SFMLCoordAdapter::physToWindow(const Vector2D& vec) const {
+    return Vector2u(vec.x, vec.y);
+}
+
+inline float EntityManager::SFMLCoordAdapter::windowToPhysX(const float x) const {
+    return x;
+}
+
+inline float EntityManager::SFMLCoordAdapter::windowToPhysY(const float y) const {
+    return (m_WindowSize.y - y);
+}
+
+inline Vector2D EntityManager::SFMLCoordAdapter::windowToPhys(const Vector2u& vec) const {
+    return Vector2D(vec.x, vec.y);
+}

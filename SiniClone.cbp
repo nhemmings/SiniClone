@@ -16,6 +16,7 @@
 				<Compiler>
 					<Add option="-g" />
 					<Add option="-DSFML_STATIC" />
+					<Add directory="include" />
 				</Compiler>
 				<Linker>
 					<Add library="sfml-graphics-s-d" />
@@ -39,6 +40,7 @@
 				<Compiler>
 					<Add option="-O2" />
 					<Add option="-DSFML_STATIC" />
+					<Add directory="include" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -66,10 +68,13 @@
 			<Add directory="lib" />
 			<Add directory="res/SFML/lib" />
 		</Linker>
+		<Unit filename="include/CoordAdapter.hpp" />
+		<Unit filename="include/EntityManager.hpp" />
 		<Unit filename="include/physics/Vector2D.hpp" />
 		<Unit filename="include/physics/Vector3D.hpp" />
 		<Unit filename="include/physics/particle.hpp" />
 		<Unit filename="include/physics/precision.hpp" />
+		<Unit filename="src/EntityManager.cpp" />
 		<Unit filename="src/main.cpp" />
 		<Unit filename="src/physics/particle.cpp" />
 		<Extensions>

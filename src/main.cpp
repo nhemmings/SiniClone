@@ -1,11 +1,12 @@
 #include <SFML/Graphics.hpp>
+#include "EntityManager.hpp"
 
 int main()
 {
     sf::RenderWindow window(sf::VideoMode(200, 200), "SFML works!");
-    sf::CircleShape shape(100.f);
-    shape.setFillColor(sf::Color::Blue);
+    EntityManager gameEntityManager(window);
 
+    // MAIN GAME LOOP
     while (window.isOpen())
     {
         sf::Event event;
@@ -16,7 +17,6 @@ int main()
         }
 
         window.clear();
-        window.draw(shape);
         window.display();
     }
 
