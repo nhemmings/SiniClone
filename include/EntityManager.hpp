@@ -1,6 +1,9 @@
 #ifndef ENTITYMANAGER_HPP_
 #define ENTITYMANAGER_HPP_
-
+/**
+ *  The EntityManager class owns and maintains the object pool for all game Entities, manages the lifetime and
+ *  update cycle of all Entities, and provides any necessary conversions between the physics and graphics engines.
+ */
 #include "SFML/Graphics.hpp"
 #include "CoordAdapter.hpp"
 #include "BaseGameEntity.hpp"

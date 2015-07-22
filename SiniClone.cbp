@@ -68,6 +68,7 @@
 			<Add directory="lib" />
 			<Add directory="res/SFML/lib" />
 		</Linker>
+		<Unit filename="include/BaseGameEntity.hpp" />
 		<Unit filename="include/CoordAdapter.hpp" />
 		<Unit filename="include/EntityManager.hpp" />
 		<Unit filename="include/physics/Vector2D.hpp" />

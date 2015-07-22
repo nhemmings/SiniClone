@@ -16,6 +16,12 @@ int EntityManager::getNextID() {
     return m_nextID++;
 }
 
+void EntityManager::registerEntity(BaseGameEntity* new Entity) {
+
+}
+
+
+
 inline float EntityManager::SFMLCoordAdapter::physToWindowX(const float x) const {
     return x;
 }
