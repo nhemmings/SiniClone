@@ -68,6 +68,7 @@
 			<Add directory="lib" />
 			<Add directory="res/SFML/lib" />
 		</Linker>
+		<Unit filename="include/AsteroidEntity.hpp" />
 		<Unit filename="include/BaseGameEntity.hpp" />
 		<Unit filename="include/CoordAdapter.hpp" />
 		<Unit filename="include/EntityManager.hpp" />
@@ -75,6 +76,7 @@
 		<Unit filename="include/physics/Vector3D.hpp" />
 		<Unit filename="include/physics/particle.hpp" />
 		<Unit filename="include/physics/precision.hpp" />
+		<Unit filename="src/AsteroidEntity.cpp" />
 		<Unit filename="src/EntityManager.cpp" />
 		<Unit filename="src/main.cpp" />
 		<Unit filename="src/physics/particle.cpp" />

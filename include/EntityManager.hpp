@@ -13,6 +13,12 @@ using sf::Window;
 class EntityManager
 {
 private:
+    /**
+     *  Adapter class to convert between the differing coordinate systems of the physics and graphics engines.
+     *  Specifically, SFML puts the origin in the top left corner of the window and the Y-axis increases down. The
+     *  physics engine puts the origin in the lower left and the Y-axis increases upward, which is more intuitive for
+     *  physics simulation (i.e. gravity). This class provides helper functions to convert from one to the other.
+     */
     class SFMLCoordAdapter : public CoordAdapter {
     public:
         SFMLCoordAdapter(const Vector2u windowSize) : CoordAdapter(windowSize) {}
@@ -28,20 +34,18 @@ private:
     Window& m_Window;
     SFMLCoordAdapter m_CoordAdapter;
     int m_nextID;
+    const static unsigned short maxEntities = 50;
+
 
     EntityManager();    // default ctor hidden to enforce dependency injection!
     EntityManager(const EntityManager& other);  // 'Singleton' -- Do not allow copy construction.
     EntityManager& operator=(const EntityManager& other);   // 'Singleton' -- Do not allow assignment.
 
-    void updateWindowSize(const sf::Vector2u& windowSize);
 public:
     EntityManager(sf::Window& window);
     ~EntityManager();
     int getNextID();
-    void registerEntity(BaseGameEntity* newEntity);
-    BaseGameEntity* getEntityFromID(int ID) const;
-    void removeEntity(BaseGameEntity* pEntity);
-    void removeEntityByID(int ID);
+    void update(float duration);
 protected:
 };
 

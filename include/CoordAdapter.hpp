@@ -3,7 +3,6 @@
 
 #include "SFML/System.hpp"
 #include "physics/Vector2D.hpp"
-#include "EntityManager.hpp"
 
 using sf::Vector2u;
 using physics::Vector2D;
