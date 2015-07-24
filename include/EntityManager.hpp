@@ -6,7 +6,7 @@
  */
 #include "SFML/Graphics.hpp"
 #include "CoordAdapter.hpp"
-#include "BaseGameEntity.hpp"
+#include "AsteroidEntity.hpp"
 
 using sf::Window;
 
@@ -35,7 +35,7 @@ private:
     SFMLCoordAdapter m_CoordAdapter;
     int m_nextID;
     const static unsigned short maxEntities = 50;
-
+    AsteroidEntity asteroids[maxEntities];
 
     EntityManager();    // default ctor hidden to enforce dependency injection!
     EntityManager(const EntityManager& other);  // 'Singleton' -- Do not allow copy construction.

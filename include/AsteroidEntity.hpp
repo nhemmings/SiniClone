@@ -13,9 +13,10 @@ private:
     sf::CircleShape m_Circle;
     physics::Particle m_Particle;
     CoordAdapter* m_CoordAdapter;
-    AsteroidEntity();
+    bool isActive;
 public:
-    AsteroidEntity(CoordAdapter* coordAdapter, float radius, unsigned short pointCount,
+    AsteroidEntity() : isActive(false) {}
+    AsteroidEntity(CoordAdapter* coordAdapter, float radius, unsigned short pointCount, float mass,
                    Vector2D position, Vector2D velocity);
     virtual ~AsteroidEntity();
 

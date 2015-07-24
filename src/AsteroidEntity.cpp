@@ -1,6 +1,6 @@
 #include "AsteroidEntity.hpp"
 
-AsteroidEntity::AsteroidEntity(CoordAdapter* coordAdapter, float radius, unsigned short pointCount,
+AsteroidEntity::AsteroidEntity(CoordAdapter* coordAdapter, float radius, unsigned short pointCount, float mass,
                                Vector2D position, Vector2D velocity)
     : m_Circle(radius, pointCount),
       m_CoordAdapter(coordAdapter)
@@ -14,6 +14,6 @@ AsteroidEntity::~AsteroidEntity()
     //dtor
 }
 
-void AsteroidEntity::update(flaot duration) {
-
+void AsteroidEntity::update(float duration) {
+    m_Particle.integrate(duration);
 }
