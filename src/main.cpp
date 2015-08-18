@@ -1,6 +1,16 @@
+/**
+ *  Program bootstrap.
+ *
+ *  Parses command line arguments, loads any preliminary dependencies, displays splash/loading window/screen, and passes
+ *  execution off to the primary Game object.
+ */
 #include <SFML/Graphics.hpp>
 #include <SFML/System.hpp>
-#include "EntityManager.hpp"
+#include "Game.hpp"
+
+#ifdef DEBUG
+#include <iostream>
+#endif // DEBUG
 
 void runServerFrame(const sf::Time & dt);
 void runClientFrame(const sf::Time & dt, sf::RenderWindow & rwindow);
@@ -16,50 +26,65 @@ public:
     sf::Time update(sf::Time & dtCurrent);
 };
 
-int main()
+int main(int argc, char** argv)
 {
+    #ifdef DEBUG
+    using std::cout;
+    using std::endl;
+    #endif // DEBUG
+
+    // Parse command line arguments
+    if (argc > 1) {
+        // STUB: Process command line arguments
+    }
+
+    // Load and display splash/loading window
+    // STUB: Splash can be developed later
+
+    // Load dependencies
+    // STUB: No dependencies at this time
+
+    // Create main Game object and pass off execution
+//    Game game;
+//    return game.run();
+
+    Game theGame;
+    theGame.run();
+
     using sf::Clock;
     using sf::Time;
 
-    static const Time s_tServerFrame = sf::seconds(1.0f/20.0f);
-    static const Time s_dtIdeal = sf::seconds(1.0f/30.0f);
-    sf::RenderWindow window(sf::VideoMode(500, 300), "SFML works!");
-    EntityManager gameEntityManager(window);
-
-    /* Initialize clocks */
-    Time dtReal = s_dtIdeal;        // The real frame delta time, initialized to ideal value
-    dtAverage m_dtAvg(s_dtIdeal);
-    Time dtServer = sf::Time::Zero; // Delta time since last server frame
-    Clock realTimeClock;
-    Time tBegin = realTimeClock.getElapsedTime();
+/*     static const Time s_tServerFrame = sf::seconds(1.0f/20.0f);
+ *     static const Time s_dtIdeal = sf::seconds(1.0f/30.0f);
+ *
+ *     // Initialize clocks
+ *     Time dtReal = s_dtIdeal;        // The real frame delta time, initialized to ideal value
+ *     dtAverage m_dtAvg(s_dtIdeal);
+ *     Time dtServer = sf::Time::Zero; // Delta time since last server frame
+ *     Clock realTimeClock;
+ *     Time tBegin = realTimeClock.getElapsedTime();
+ */
 
     // MAIN GAME LOOP
-    while (window.isOpen())
-    {
-        // System message pump
-        sf::Event event;
-        while (window.pollEvent(event))
-        {
-            if (event.type == sf::Event::Closed)
-                window.close();
-        }
-
-        // Server update
-        dtServer += dtReal;
-        if (dtServer >= s_tServerFrame) {
-            runServerFrame(dtServer);
-            dtServer -= s_tServerFrame;
-        }
-
-        // Client update
-        runClientFrame(dtReal, window);
-
-        // Timer update
-        Time tEnd = realTimeClock.getElapsedTime();
-        Time dtThisFrame = tEnd - tBegin;
-        dtReal = m_dtAvg.update(dtThisFrame);
-        tBegin = tEnd;
-    }
+/*     while (window.isOpen())
+ *     {
+ *         // Server update
+ *         dtServer += dtReal;
+ *         if (dtServer >= s_tServerFrame) {
+ *             runServerFrame(dtServer);
+ *             dtServer -= s_tServerFrame;
+ *         }
+ *
+ *         // Client update
+ *         runClientFrame(dtReal, window);
+ *
+ *         // Timer update
+ *         Time tEnd = realTimeClock.getElapsedTime();
+ *         Time dtThisFrame = tEnd - tBegin;
+ *         dtReal = m_dtAvg.update(dtThisFrame);
+ *         tBegin = tEnd;
+ *     }
+ */
 
     return 0;
 }
