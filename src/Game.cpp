@@ -3,6 +3,7 @@
 Game::Game() : m_window(sf::VideoMode(800, 600), "SFML works!"), m_tServerFrame(sf::seconds(1.0/20.0f)),
                m_dtIdeal(sf::seconds(1.0/30.0f))
 {
+    dtSMAinit(m_dtIdeal);
 }
 
 Game::~Game()
@@ -48,7 +49,7 @@ void Game::run() {
         // Timer update
         Time tEnd = realTimeClock.getElapsedTime();
         Time dtThisFrame = tEnd - tBegin;
-        dtReal = m_dtAvg.update(dtThisFrame);
+        dtReal = dtSMAupdate(dtThisFrame);
         tBegin = tEnd;
 
         m_window.display();
@@ -62,4 +63,18 @@ void Game::runServerFrame(const sf::Time & dt) {
 void Game::runClientFrame(const sf::Time & dt, sf::RenderWindow & rwindow) {
     rwindow.clear();
     rwindow.display();
+}
+
+void Game::dtSMAinit(const sf::Time & dtIdeal) {
+    for (int i = 0; i < m_dtHistorySize; i++) {
+        m_dtHistory[i] = dtIdeal;
+    }
+}
+
+sf::Time Game::dtSMAupdate(const sf::Time & dtCurrent) {
+    static unsigned short idx = 0;
+    m_dtSMA += dtCurrent/float(m_dtHistorySize) - m_dtHistory[idx]/float(m_dtHistorySize);
+    m_dtHistory[idx] = dtCurrent;
+    idx = (idx + 1) % m_dtHistorySize;
+    return m_dtSMA;
 }
