@@ -30,7 +30,7 @@ private:
 
     GameType m_GameType;
     sf::RenderWindow m_window;
-    const sf::Time m_tServerFrame;
+    const sf::Time m_dtServerFrame;
     const sf::Time m_dtIdeal;
     SFMLCoordAdapter m_CoordAdapter;
     AsteroidPool m_AsteroidPool;

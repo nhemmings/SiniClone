@@ -4,10 +4,12 @@
 #include <iostream>
 #endif // DEBUG
 
-Game::Game() : m_window(sf::VideoMode(800, 600), "SFML works!"), m_tServerFrame(sf::seconds(1.0/20.0f)),
-               m_dtIdeal(sf::seconds(1.0/30.0f)), m_CoordAdapter(Vector2u(800,600)), m_AsteroidPool(m_CoordAdapter),
-               m_isRunning(false)
+Game::Game() : m_dtServerFrame(sf::seconds(1.0/20.0f)), m_dtIdeal(sf::seconds(1.0/30.0f)),
+               m_CoordAdapter(Vector2u(800,600)), m_AsteroidPool(m_CoordAdapter), m_isRunning(false)
 {
+    sf::ContextSettings settings;
+    settings.antialiasingLevel = 6;
+    m_window.create(sf::VideoMode(800, 600), "SFML works!", sf::Style::Default, settings);
     dtSMAinit(m_dtIdeal);
 }
 
@@ -54,9 +56,9 @@ void Game::run() {
 
         // Server update
         dtServer += dtReal;
-        if (dtServer >= m_tServerFrame) {
+        if (dtServer >= m_dtServerFrame) {
             runServerFrame(dtServer);
-            dtServer -= m_tServerFrame;
+            dtServer -= m_dtServerFrame;
         }
 
         // Client update
@@ -67,8 +69,6 @@ void Game::run() {
         Time dtThisFrame = tEnd - tBegin;
         dtReal = dtSMAupdate(dtThisFrame);
         tBegin = tEnd;
-
-        m_window.display();
     }
 }
 
@@ -78,6 +78,8 @@ void Game::runServerFrame(const sf::Time & dt) {
 
 void Game::runClientFrame(const sf::Time & dt, sf::RenderWindow & rwindow) {
     rwindow.clear();
+    m_AsteroidPool.updateAsteroids(dt);
+    m_AsteroidPool.renderAsteroids(rwindow);
     rwindow.display();
 }
 
@@ -103,6 +105,8 @@ void Game::startGame(const GameType newGameType) {
                  ((newGameType == 0) ? "SinglePlayer" : "MultiPlayer") << std::endl;
     #endif // DEBUG
 
+    m_AsteroidPool.addAsteroid(10, 40, 1.3, Vector2D(25.0, 50.0), Vector2D(0.0, 0.0));
+
     m_isRunning = true;
 }
 
@@ -118,7 +122,7 @@ inline float Game::SFMLCoordAdapter::physToWindowY(const float y) const {
 }
 
 inline Vector2u Game::SFMLCoordAdapter::physToWindow(const Vector2D& vec) const {
-    return Vector2u(vec.x, vec.y);
+    return Vector2u(vec.x, m_WindowSize.y - vec.y);
 }
 
 inline float Game::SFMLCoordAdapter::windowToPhysX(const float x) const {

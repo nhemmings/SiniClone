@@ -15,7 +15,7 @@ using namespace physics;
 void Particle::integrate(real duration) {
     // Don't integrate things with infinite mass
     if (inverseMass <= 0.0f) return;
-    assert(duration > 0.0);
+    //assert(duration > 0.0f);
 
     // Update position
     position.addScaledVector(velocity, duration);

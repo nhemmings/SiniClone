@@ -20,9 +20,10 @@ public:
     virtual ~AsteroidPool();
 
     int addAsteroid(float radius, unsigned short pointCount, float mass, Vector2D pos, Vector2D vel);
-    bool removeAsteroid(unsigned int ID);
     void updateAsteroids(const sf::Time & duration);
     void renderAsteroids(sf::RenderWindow & rwindow);
+private:
+    bool removeAsteroid(unsigned int ID);
 };
 
 #endif // ASTEROIDPOOL_HPP
