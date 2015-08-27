@@ -1,5 +1,9 @@
 #include "AsteroidPool.hpp"
 
+#ifdef DEBUG
+#include <iostream>
+#endif // DEBUG
+
 AsteroidPool::AsteroidPool(const CoordAdapter & adapter) : m_CoordAdapter(adapter), m_activeIndex(0)
 {
     m_Circles = new sf::CircleShape[s_maxAsteroids];
@@ -13,14 +17,17 @@ AsteroidPool::~AsteroidPool()
     delete [] m_Particles;
 }
 
-int AsteroidPool::addAsteroid(float radius, unsigned short pointCount, float mass, Vector2D pos, Vector2D vel) {
+int AsteroidPool::addAsteroid(float radius, unsigned short pointCount, float mass, float damping,
+                              Vector2D pos, Vector2D vel, Vector2D accel) {
     if (m_activeIndex >= s_maxAsteroids)
         return -1;
     m_Circles[m_activeIndex].setRadius(radius);
     m_Circles[m_activeIndex].setPointCount(pointCount);
     m_Particles[m_activeIndex].setMass(mass);
+    m_Particles[m_activeIndex].setDamping(damping);
     m_Particles[m_activeIndex].setPosition(pos);
     m_Particles[m_activeIndex].setVelocity(vel);
+    m_Particles[m_activeIndex].setAcceleration(accel);
     return m_activeIndex++;
 }
 
@@ -28,6 +35,10 @@ void AsteroidPool::updateAsteroids(const sf::Time & duration) {
     for (unsigned int i = 0; i < m_activeIndex; i++) {
         m_Particles[i].integrate(duration.asSeconds());
         sf::Vector2u convertedCoord = m_CoordAdapter.physToWindow(m_Particles[i].getPosition());
+
+//        #ifdef DEBUG
+//        std::cout << "(" << convertedCoord.x << ", " << convertedCoord.y << ")" << std::endl;
+//        #endif // DEBUG
         m_Circles[i].setPosition(convertedCoord.x, convertedCoord.y);
     }
 
@@ -52,8 +63,10 @@ bool AsteroidPool::removeAsteroid(unsigned int ID) {
         m_Circles[ID].setRadius(m_Circles[m_activeIndex].getRadius());
         m_Circles[m_activeIndex].setPointCount(m_Circles[m_activeIndex].getPointCount());
         m_Particles[m_activeIndex].setMass(m_Particles[m_activeIndex].getMass());
+        m_Particles[m_activeIndex].setDamping(m_Particles[m_activeIndex].getDamping());
         m_Particles[m_activeIndex].setPosition(m_Particles[m_activeIndex].getPosition());
         m_Particles[m_activeIndex].setVelocity(m_Particles[m_activeIndex].getVelocity());
+        m_Particles[m_activeIndex].setAcceleration(m_Particles[m_activeIndex].getAcceleration());
     }
     return true;
 }

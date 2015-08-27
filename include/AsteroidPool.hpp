@@ -19,7 +19,8 @@ public:
     explicit AsteroidPool(const CoordAdapter & adapter);
     virtual ~AsteroidPool();
 
-    int addAsteroid(float radius, unsigned short pointCount, float mass, Vector2D pos, Vector2D vel);
+    int addAsteroid(float radius, unsigned short pointCount, float mass, float damping,
+                    Vector2D pos, Vector2D vel, Vector2D accel);
     void updateAsteroids(const sf::Time & duration);
     void renderAsteroids(sf::RenderWindow & rwindow);
 private:
