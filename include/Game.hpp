@@ -5,6 +5,10 @@
 #include "CoordAdapter.hpp"
 #include "AsteroidPool.hpp"
 
+#ifdef DEBUG
+#include <fstream>
+#endif // DEBUG
+
 class Game
 {
 private:
@@ -37,9 +41,13 @@ private:
     bool m_isRunning;
 
     /* Data for tracking a Simple Moving Average of delta times */
-    static const unsigned short m_dtHistorySize = 10;
+    static const unsigned short m_dtSMA_period = 10;
     sf::Time m_dtSMA;
-    sf::Time m_dtHistory[m_dtHistorySize];
+    sf::Time m_dtHistory[m_dtSMA_period];
+
+    #ifdef DEBUG
+    std::ofstream m_outFile;
+    #endif // DEBUG
 
     void startGame(const GameType newGameType);
     void runServerFrame(const sf::Time & dt);

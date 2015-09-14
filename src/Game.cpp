@@ -12,11 +12,15 @@ Game::Game() : m_dtServerFrame(sf::seconds(1.0/20.0f)), m_dtIdeal(sf::seconds(1.
     m_window.create(sf::VideoMode(800, 600), "SFML works!", sf::Style::Default, settings);
     dtSMAinit(m_dtIdeal);
     m_dtSMA = m_dtIdeal;
+
+    #ifdef DEBUG
+    m_outFile.open("dtSMA.csv");
+    #endif // DEBUG
 }
 
 Game::~Game()
 {
-    //dtor
+    m_outFile.close();
 }
 
 void Game::run() {
@@ -74,6 +78,10 @@ void Game::run() {
         Time dtThisFrame = tEnd - tBegin;
         dtReal = dtSMAupdate(dtThisFrame);
         tBegin = tEnd;
+
+        #ifdef DEBUG
+        cout << "Current: " << dtThisFrame.asSeconds() << "  :  SMA: " << dtReal.asSeconds() << endl;
+        #endif // DEBUG
     }
 }
 
@@ -81,10 +89,6 @@ void Game::runServerFrame(const sf::Time & dt) {
 }
 
 void Game::runClientFrame(const sf::Time & dt, sf::RenderWindow & rwindow) {
-    #ifdef DEBUG
-    std::cout << dt.asSeconds() << std::endl;
-    #endif // DEBUG
-
     rwindow.clear();
     m_AsteroidPool.updateAsteroids(dt);
     m_AsteroidPool.renderAsteroids(rwindow);
@@ -92,16 +96,27 @@ void Game::runClientFrame(const sf::Time & dt, sf::RenderWindow & rwindow) {
 }
 
 void Game::dtSMAinit(const sf::Time & dtIdeal) {
-    for (int i = 0; i < m_dtHistorySize; i++) {
-        m_dtHistory[i] = dtIdeal;
+    for (int i = 0; i < m_dtSMA_period; i++) {
+        m_dtHistory[i] = dtIdeal / sf::Int64(m_dtSMA_period);
     }
 }
 
 sf::Time Game::dtSMAupdate(const sf::Time & dtCurrent) {
     static unsigned short idx = 0;
-    m_dtSMA = m_dtSMA * float(m_dtHistorySize - 1)/float(m_dtHistorySize) + dtCurrent/float(m_dtHistorySize);
-    m_dtHistory[idx] = dtCurrent;
-    idx = (idx + 1) % m_dtHistorySize;
+
+    #ifdef DEBUG
+    m_outFile << dtCurrent.asSeconds() << ",";
+    #endif // DEBUG
+
+    sf::Time dtCurrentScaled = dtCurrent / sf::Int64(m_dtSMA_period);
+    m_dtSMA = m_dtSMA - m_dtHistory[idx] + dtCurrentScaled;
+    m_dtHistory[idx] = dtCurrentScaled;
+    idx = (idx + 1) % m_dtSMA_period;
+
+    #ifdef DEBUG
+    m_outFile << m_dtSMA.asSeconds() << std::endl;
+    #endif // DEBUG
+
     return m_dtSMA;
 }
 
