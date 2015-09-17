@@ -1,6 +1,6 @@
 #include "AsteroidEntity.hpp"
 
-AsteroidEntity::AsteroidEntity(CoordAdapter* coordAdapter, float radius, unsigned short pointCount, float mass,
+AsteroidEntity::AsteroidEntity(CoordAdapter2D* coordAdapter, float radius, unsigned short pointCount, float mass,
                                Vector2D position, Vector2D velocity)
     : m_Circle(radius, pointCount),
       m_CoordAdapter(coordAdapter)

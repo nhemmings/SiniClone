@@ -2,27 +2,30 @@
 #define GAME_HPP
 
 #include <SFML/Graphics.hpp>
-#include "CoordAdapter.hpp"
+#include "CoordAdapter2D.hpp"
 #include "AsteroidPool.hpp"
 
 #ifdef DEBUG
 #include <fstream>
 #endif // DEBUG
 
+/**
+ *  The primary game logic and entry point. Initializes the game's subsystems and manages the viewing window.
+ */
 class Game
 {
 private:
     enum GameType {SinglePlayer, MultiPlayer};
 
     /**
-     *  Adapter class to convert between the differing coordinate systems of the physics and graphics engines.
+     *
      *  Specifically, SFML puts the origin in the top left corner of the window and the Y-axis increases down. The
      *  physics engine puts the origin in the lower left and the Y-axis increases upward, which is more intuitive for
      *  physics simulation (i.e. gravity). This class provides helper functions to convert from one to the other.
      */
-    class SFMLCoordAdapter : public CoordAdapter {
+    class SFMLCoordAdapter : public CoordAdapter2D {
     public:
-        SFMLCoordAdapter(const Vector2u windowSize) : CoordAdapter(windowSize) {}
+        SFMLCoordAdapter(const Vector2u windowSize) : CoordAdapter2D(windowSize) {}
         float physToWindowX(const float x) const;
         float physToWindowY(const float y) const;
         Vector2u physToWindow(const Vector2D& vec) const;

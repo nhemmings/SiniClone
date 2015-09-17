@@ -6,17 +6,19 @@
 
 using sf::Vector2u;
 using physics::Vector2D;
-
-class CoordAdapter
+/**
+ *  Adapter class to convert between the differing (2D) coordinate systems of the physics and graphics engines.
+ */
+class CoordAdapter2D
 {
 private:
-    CoordAdapter();
-    CoordAdapter(const CoordAdapter& other);
-    CoordAdapter& operator=(const CoordAdapter& other);
+    CoordAdapter2D();
+    CoordAdapter2D(const CoordAdapter2D& other);
+    CoordAdapter2D& operator=(const CoordAdapter2D& other);
 protected:
     sf::Vector2u m_WindowSize;
 public:
-    CoordAdapter(const Vector2u windowSize) : m_WindowSize(windowSize) {}
+    CoordAdapter2D(const Vector2u windowSize) : m_WindowSize(windowSize) {}
     void updateWindowSize(const sf::Vector2u& windowSize) { m_WindowSize = windowSize; }
 
     virtual float physToWindowX(const float x) const = 0;

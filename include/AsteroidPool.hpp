@@ -5,7 +5,7 @@
 #include <SFML/System/Time.hpp>
 #include "physics/Vector2D.hpp"
 #include "physics/particle.hpp"
-#include "CoordAdapter.hpp"
+#include "CoordAdapter2D.hpp"
 
 class AsteroidPool
 {
@@ -13,10 +13,10 @@ private:
     static const unsigned s_maxAsteroids = 25;
     sf::CircleShape* m_Circles;
     physics::Particle* m_Particles;
-    const CoordAdapter & m_CoordAdapter;
+    const CoordAdapter2D & m_CoordAdapter;
     unsigned m_activeIndex;
 public:
-    explicit AsteroidPool(const CoordAdapter & adapter);
+    explicit AsteroidPool(const CoordAdapter2D & adapter);
     virtual ~AsteroidPool();
 
     int addAsteroid(float radius, unsigned short pointCount, float mass, float damping,

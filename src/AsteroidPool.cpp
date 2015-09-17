@@ -4,7 +4,7 @@
 #include <iostream>
 #endif // DEBUG
 
-AsteroidPool::AsteroidPool(const CoordAdapter & adapter) : m_CoordAdapter(adapter), m_activeIndex(0)
+AsteroidPool::AsteroidPool(const CoordAdapter2D & adapter) : m_CoordAdapter(adapter), m_activeIndex(0)
 {
     m_Circles = new sf::CircleShape[s_maxAsteroids];
     m_Particles = new physics::Particle[s_maxAsteroids];

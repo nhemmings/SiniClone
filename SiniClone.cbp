@@ -70,7 +70,7 @@
 			<Add directory="res/SFML/lib" />
 		</Linker>
 		<Unit filename="include/AsteroidPool.hpp" />
-		<Unit filename="include/CoordAdapter.hpp" />
+		<Unit filename="include/CoordAdapter2D.hpp" />
 		<Unit filename="include/Game.hpp" />
 		<Unit filename="include/physics/Vector2D.hpp" />
 		<Unit filename="include/physics/Vector3D.hpp" />
