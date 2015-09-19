@@ -7,15 +7,17 @@
 using sf::Vector2u;
 using physics::Vector2D;
 /**
- *  Adapter class to convert between the differing (2D) coordinate systems of the physics and graphics engines.
+ *  Adapter class to convert between the differing (2D) coordinate systems of the physics and graphics subsystems.
  */
 class CoordAdapter2D
 {
 private:
+    /* Default constructor, Copy constructor, and Assignment operator private to guard against their use. */
     CoordAdapter2D();
     CoordAdapter2D(const CoordAdapter2D& other);
     CoordAdapter2D& operator=(const CoordAdapter2D& other);
 protected:
+    /**< Graphics subsystem vector representation of the viewing window's dimensions. */
     sf::Vector2u m_WindowSize;
 public:
     CoordAdapter2D(const Vector2u windowSize) : m_WindowSize(windowSize) {}
