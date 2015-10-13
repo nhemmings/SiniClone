@@ -1,4 +1,4 @@
-/**
+/** @file
  *  Program bootstrap.
  *
  *  Parses command line arguments, loads any preliminary dependencies, displays splash/loading window/screen, and passes

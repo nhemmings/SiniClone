@@ -18,9 +18,10 @@ private:
     enum GameType {SinglePlayer, MultiPlayer};
 
     /**
-     *  SFML puts the origin in the top left corner of the window and the Y-axis increases down. The physics engine
-     *  puts the origin in the lower left and the Y-axis increases upward, which is more intuitive for physics
-     *  simulation (i.e. gravity). This class provides helper functions to convert from one to the other.
+     *  Provides helper functions to convert between the SFML coordinate system and the physics engine's coordinate
+     *  system.SFML puts the origin in the top left corner of the window and the Y-axis increases down. The physics
+     *  engine puts the origin in the lower left and the Y-axis increases upward, which is more intuitive for physics
+     *  simulation (e.g. gravity).
      */
     class SFMLCoordAdapter : public CoordAdapter2D {
     public:

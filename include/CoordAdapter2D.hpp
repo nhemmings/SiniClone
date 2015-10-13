@@ -6,8 +6,10 @@
 
 using sf::Vector2u;
 using physics::Vector2D;
+
 /**
- *  Adapter class to convert between the differing (2D) coordinate systems of the physics and graphics subsystems.
+ *  Adapter class to convert between differing (2D) coordinate systems (e.g. those of physics and graphics
+ *  subsystems).
  */
 class CoordAdapter2D
 {
