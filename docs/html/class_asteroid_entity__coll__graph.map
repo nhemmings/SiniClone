@@ -1,0 +1,4 @@
+<map id="AsteroidEntity" name="AsteroidEntity">
+<area shape="rect" id="node2" href="$classphysics_1_1_particle.html" title="physics::Particle" alt="" coords="11,139,130,165"/>
+<area shape="rect" id="node3" href="$classphysics_1_1_vector2_d.html" title="physics::Vector2D" alt="" coords="5,5,136,32"/>
+</map>

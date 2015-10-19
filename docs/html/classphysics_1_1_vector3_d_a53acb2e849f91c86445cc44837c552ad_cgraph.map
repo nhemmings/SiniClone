@@ -1,0 +1,4 @@
+<map id="physics::Vector3D::operator%=" name="physics::Vector3D::operator%=">
+<area shape="rect" id="node2" href="$classphysics_1_1_vector3_d.html#a0a66baca26449705ddd61c372145dced" title="Calculates and returns the vector product of this vector with the given vector. " alt="" coords="192,5,331,47"/>
+<area shape="rect" id="node3" href="$classphysics_1_1_vector3_d.html#ab11e8a3fd31e81d11b143b648704347a" title="Default constructor creates a zero vector. " alt="" coords="379,5,517,47"/>
+</map>

@@ -1,0 +1,6 @@
+var searchData=
+[
+  ['windowtophys',['windowToPhys',['../class_coord_adapter2_d.html#abb3289d2612f17670dfe64e4733e07c5',1,'CoordAdapter2D::windowToPhys()'],['../class_entity_manager_1_1_s_f_m_l_coord_adapter.html#a913c217eee7e63c81616fe6acdbb0578',1,'EntityManager::SFMLCoordAdapter::windowToPhys()'],['../class_game_1_1_s_f_m_l_coord_adapter.html#a5a422801edc9fd27338bb9d1c2b9b14d',1,'Game::SFMLCoordAdapter::windowToPhys()']]],
+  ['windowtophysx',['windowToPhysX',['../class_coord_adapter2_d.html#a577eda0f4351637f9443c3c0361c6e0f',1,'CoordAdapter2D::windowToPhysX()'],['../class_entity_manager_1_1_s_f_m_l_coord_adapter.html#a628f96c6acc17c859718da2bb5a21136',1,'EntityManager::SFMLCoordAdapter::windowToPhysX()'],['../class_game_1_1_s_f_m_l_coord_adapter.html#a3c501fae71fb50ada3db03aa7822bc5c',1,'Game::SFMLCoordAdapter::windowToPhysX()']]],
+  ['windowtophysy',['windowToPhysY',['../class_coord_adapter2_d.html#a2abc9ee693a3d72191926b510418a0a2',1,'CoordAdapter2D::windowToPhysY()'],['../class_entity_manager_1_1_s_f_m_l_coord_adapter.html#a75958786736a4edeeda018daa01091d0',1,'EntityManager::SFMLCoordAdapter::windowToPhysY()'],['../class_game_1_1_s_f_m_l_coord_adapter.html#a98a7ce12d5a6d73e248c757a3dc6b611',1,'Game::SFMLCoordAdapter::windowToPhysY()']]]
+];

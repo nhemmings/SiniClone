@@ -1,0 +1,6 @@
+<map id="EntityManager" name="EntityManager">
+<area shape="rect" id="node2" href="$class_asteroid_entity.html" title="AsteroidEntity" alt="" coords="19,235,123,262"/>
+<area shape="rect" id="node3" href="$classphysics_1_1_particle.html" title="physics::Particle" alt="" coords="11,139,130,165"/>
+<area shape="rect" id="node4" href="$classphysics_1_1_vector2_d.html" title="physics::Vector2D" alt="" coords="5,5,136,32"/>
+<area shape="rect" id="node5" href="$class_entity_manager_1_1_s_f_m_l_coord_adapter.html" title="Adapter class to convert between the differing coordinate systems of the physics and graphics engines..." alt="" coords="147,228,331,269"/>
+</map>
