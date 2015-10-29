@@ -15,11 +15,11 @@
 class Game
 {
 private:
-    enum GameType {SinglePlayer, MultiPlayer};
+    enum GameType {SinglePlayer, MultiPlayer}; /**< Enumeration of game modes. */
 
     /**
      *  Provides helper functions to convert between the SFML coordinate system and the physics engine's coordinate
-     *  system.SFML puts the origin in the top left corner of the window and the Y-axis increases down. The physics
+     *  system. SFML puts the origin in the top left corner of the window and the Y-axis increases down. The physics
      *  engine puts the origin in the lower left and the Y-axis increases upward, which is more intuitive for physics
      *  simulation (e.g. gravity).
      */
@@ -61,7 +61,7 @@ public:
     Game();
     virtual ~Game();
 
-    void run();
+    int run();
 };
 
 #endif // GAME_HPP

@@ -10,6 +10,9 @@
 #include <iostream>
 #endif // DEBUG
 
+/**
+ *  Program entry point.
+ */
 int main(int argc, char** argv)
 {
     #ifdef DEBUG
@@ -30,6 +33,5 @@ int main(int argc, char** argv)
 
     // Create main Game object and pass off execution
     Game theGame;
-    theGame.run();
-    return 0;
+    return theGame.run();
 }
