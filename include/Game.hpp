@@ -37,13 +37,14 @@ private:
 
     GameType m_GameType;
     sf::RenderWindow m_window;
+    sf::View m_mainView;
     const sf::Time m_dtServerFrame;
     const sf::Time m_dtIdeal;
     SFMLCoordAdapter m_CoordAdapter;
     AsteroidPool m_AsteroidPool;
     bool m_isRunning;
 
-    /* Data for tracking a Simple Moving Average of delta times */
+    /**< Data for tracking a Simple Moving Average of frame delta times */
     static const unsigned short m_dtSMA_period = 10;
     sf::Time m_dtSMA;
     sf::Time m_dtHistory[m_dtSMA_period];

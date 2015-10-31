@@ -1,6 +1,7 @@
 <map id="EntityManager" name="EntityManager">
-<area shape="rect" id="node2" href="$class_asteroid_entity.html" title="AsteroidEntity" alt="" coords="19,235,123,262"/>
-<area shape="rect" id="node3" href="$classphysics_1_1_particle.html" title="physics::Particle" alt="" coords="11,139,130,165"/>
-<area shape="rect" id="node4" href="$classphysics_1_1_vector2_d.html" title="physics::Vector2D" alt="" coords="5,5,136,32"/>
-<area shape="rect" id="node5" href="$class_entity_manager_1_1_s_f_m_l_coord_adapter.html" title="Adapter class to convert between the differing coordinate systems of the physics and graphics engines..." alt="" coords="147,228,331,269"/>
+<area shape="rect" id="node2" href="$class_asteroid_entity.html" title="{AsteroidEntity\n|&#45; m_Circle\l&#45; isActive\l|+ AsteroidEntity()\l+ AsteroidEntity()\l+ ~AsteroidEntity()\l+ update()\l}" alt="" coords="157,674,289,810"/>
+<area shape="rect" id="node3" href="$classphysics_1_1_particle.html" title="{physics::Particle\n|# inverseMass\l# damping\l|+ integrate()\l+ setMass()\l+ getMass()\l+ setInverseMass()\l+ getInverseMass()\l+ setDamping()\l+ getDamping()\l+ setPosition()\l+ setPosition()\l+ getPosition()\land 11 more...\l}" alt="" coords="9,351,143,589"/>
+<area shape="rect" id="node4" href="$classphysics_1_1_vector2_d.html" title="{physics::Vector2D\n|+ x\l+ y\l|+ Vector2D()\l+ Vector2D()\l+ invert()\l+ clear()\l+ magnitude()\l+ squareMagnitude()\l+ normalize()\l+ operator*=()\l+ operator*()\l+ operator+=()\land 9 more...\l}" alt="" coords="5,5,147,244"/>
+<area shape="rect" id="node5" href="$class_coord_adapter2_d.html" title="Adapter class to convert between differing (2D) coordinate systems (e.g. " alt="" coords="168,358,323,582"/>
+<area shape="rect" id="node7" href="$class_entity_manager_1_1_s_f_m_l_coord_adapter.html" title="Adapter class to convert between the differing coordinate systems of the physics and graphics engines..." alt="" coords="313,652,497,832"/>
 </map>

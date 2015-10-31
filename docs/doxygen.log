@@ -1,6 +1,0 @@
-C:/Users/Nathan/Development/SiniClone/src/AsteroidEntity.cpp:3: warning: no matching class member found for 
-  AsteroidEntity::AsteroidEntity(CoordAdapter2D *coordAdapter, float radius, unsigned short pointCount, float mass, Vector2D position, Vector2D velocity)
-Possible candidates:
-  AsteroidEntity::AsteroidEntity()
-  AsteroidEntity::AsteroidEntity(CoordAdapter *coordAdapter, float radius, unsigned short pointCount, float mass, Vector2D position, Vector2D velocity)
-

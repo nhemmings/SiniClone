@@ -1,5 +1,5 @@
 <map id="Game::startGame" name="Game::startGame">
-<area shape="rect" id="node2" href="$class_asteroid_pool.html#a984b3c6398cbd53c75137dfe4883ecb8" title="AsteroidPool::addAsteroid" alt="" coords="180,143,353,170"/>
+<area shape="rect" id="node2" href="$class_asteroid_pool.html#a984b3c6398cbd53c75137dfe4883ecb8" title="Creates a new asteroid in the pool, initializing it with the provided parameters (provided the pool i..." alt="" coords="180,143,353,170"/>
 <area shape="rect" id="node3" href="$classphysics_1_1_particle.html#a5482d86d6b7697dc28380319b63ae2b1" title="Sets the mass of the particle. " alt="" coords="401,5,528,47"/>
 <area shape="rect" id="node4" href="$classphysics_1_1_particle.html#a44c685836aa0fcd9a950a2de95743291" title="physics::Particle::\lsetDamping" alt="" coords="401,71,528,112"/>
 <area shape="rect" id="node5" href="$classphysics_1_1_particle.html#a29fcfe2d2b5aa3cb5d897e1177823da2" title="physics::Particle::\lsetPosition" alt="" coords="401,136,528,177"/>

@@ -1,3 +1,4 @@
+#include <cstdlib>
 #include "Game.hpp"
 
 #ifdef DEBUG
@@ -9,7 +10,7 @@ Game::Game() : m_dtServerFrame(sf::seconds(1.0/20.0f)), m_dtIdeal(sf::seconds(1.
 {
     sf::ContextSettings settings;
     settings.antialiasingLevel = 6;
-    m_window.create(sf::VideoMode(800, 600), "SFML works!", sf::Style::Default, settings);
+    m_window.create(sf::VideoMode(800, 600), "Siniclone", sf::Style::Default, settings);
     dtSMAinit(m_dtIdeal);
     m_dtSMA = m_dtIdeal;
 
@@ -23,13 +24,7 @@ Game::~Game()
     m_outFile.close();
 }
 
-void Game::run() {
-    #ifdef DEBUG
-    using std::cout;
-    using std::endl;
-    cout << "(S) for Singleplayer\n(M) for Multiplayer" << endl;
-    #endif // DEBUG
-
+int Game::run() {
     using sf::Time;
     using sf::Clock;
 
@@ -48,6 +43,11 @@ void Game::run() {
         {
             if (event.type == sf::Event::Closed)
                 m_window.close();
+            else if (event.type == sf::Event::Resized) {
+                m_mainView.setCenter(m_window.getView().getCenter());
+                m_mainView.setSize(event.size.width, event.size.height);
+                m_window.setView(m_mainView);
+            }
             else if (event.type == sf::Event::KeyPressed) {
                 if (event.key.code == sf::Keyboard::Escape)
                     m_window.close();
@@ -62,10 +62,6 @@ void Game::run() {
         // Server update
         dtServer += dtReal;
         if (dtServer >= m_dtServerFrame) {
-            #ifdef DEBUG
-            std::cout << "Running server frame: " << realTimeClock.getElapsedTime().asSeconds() << "("
-                      << dtServer.asSeconds() << ")" << std::endl;
-            #endif // DEBUG
             runServerFrame(dtServer);
             dtServer -= m_dtServerFrame;
         }
@@ -78,11 +74,8 @@ void Game::run() {
         Time dtThisFrame = tEnd - tBegin;
         dtReal = dtSMAupdate(dtThisFrame);
         tBegin = tEnd;
-
-        #ifdef DEBUG
-        cout << "Current: " << dtThisFrame.asSeconds() << "  :  SMA: " << dtReal.asSeconds() << endl;
-        #endif // DEBUG
     }
+    return 0;
 }
 
 void Game::runServerFrame(const sf::Time & dt) {
@@ -122,13 +115,6 @@ sf::Time Game::dtSMAupdate(const sf::Time & dtCurrent) {
 
 void Game::startGame(const GameType newGameType) {
     m_GameType = newGameType;
-
-    #ifdef DEBUG
-    std::cout << "Starting new game with type: " <<
-                 ((newGameType == 0) ? "SinglePlayer" : "MultiPlayer") << std::endl;
-    std::cout << "Spawning asteroid at (25, 50) with velocity (0, 0) and acceleration (0, 0)" << std::endl;
-    #endif // DEBUG
-
     m_AsteroidPool.addAsteroid(10, 40, 10, 0.99, Vector2D(20, 20), Vector2D(40.0, 100.0), Vector2D(0.0, -10.0));
     m_AsteroidPool.addAsteroid(10, 40, 10, 0.99, Vector2D(780, 20), Vector2D(-40.0, 100.0), Vector2D(0.0, -10.0));
     m_isRunning = true;

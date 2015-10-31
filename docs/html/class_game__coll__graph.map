@@ -1,7 +1,7 @@
 <map id="Game" name="Game">
-<area shape="rect" id="node2" href="$class_game_1_1_s_f_m_l_coord_adapter.html" title="Provides helper functions to convert between the SFML coordinate system and the physics engine&#39;s coor..." alt="" coords="207,228,387,255"/>
-<area shape="rect" id="node3" href="$class_coord_adapter2_d.html" title="Adapter class to convert between differing (2D) coordinate systems (e.g. " alt="" coords="195,139,314,165"/>
-<area shape="rect" id="node5" href="$class_asteroid_pool.html" title="AsteroidPool" alt="" coords="87,228,183,255"/>
-<area shape="rect" id="node6" href="$classphysics_1_1_particle.html" title="physics::Particle" alt="" coords="11,139,130,165"/>
-<area shape="rect" id="node7" href="$classphysics_1_1_vector2_d.html" title="physics::Vector2D" alt="" coords="5,5,136,32"/>
+<area shape="rect" id="node2" href="$class_game_1_1_s_f_m_l_coord_adapter.html" title="Provides helper functions to convert between the SFML coordinate system and the physics engine&#39;s coor..." alt="" coords="221,659,401,825"/>
+<area shape="rect" id="node3" href="$class_coord_adapter2_d.html" title="Adapter class to convert between differing (2D) coordinate systems (e.g. " alt="" coords="200,358,355,582"/>
+<area shape="rect" id="node5" href="$class_asteroid_pool.html" title="Management pool for asteroid entities. " alt="" coords="60,652,196,832"/>
+<area shape="rect" id="node6" href="$classphysics_1_1_particle.html" title="{physics::Particle\n|# inverseMass\l# damping\l|+ integrate()\l+ setMass()\l+ getMass()\l+ setInverseMass()\l+ getInverseMass()\l+ setDamping()\l+ getDamping()\l+ setPosition()\l+ setPosition()\l+ getPosition()\land 11 more...\l}" alt="" coords="9,351,143,589"/>
+<area shape="rect" id="node7" href="$classphysics_1_1_vector2_d.html" title="{physics::Vector2D\n|+ x\l+ y\l|+ Vector2D()\l+ Vector2D()\l+ invert()\l+ clear()\l+ magnitude()\l+ squareMagnitude()\l+ normalize()\l+ operator*=()\l+ operator*()\l+ operator+=()\land 9 more...\l}" alt="" coords="5,5,147,244"/>
 </map>

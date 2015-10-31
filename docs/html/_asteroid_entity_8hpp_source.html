@@ -113,7 +113,7 @@ $(document).ready(function(){initNavTree('_asteroid_entity_8hpp_source.html','')
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;SFML/Graphics.hpp&quot;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="particle_8hpp.html">physics/particle.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;CoordAdapter.hpp&quot;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_coord_adapter2_d_8hpp.html">CoordAdapter2D.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">using</span> <a class="code" href="classphysics_1_1_vector2_d.html">physics::Vector2D</a>;</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
@@ -122,11 +122,11 @@ $(document).ready(function(){initNavTree('_asteroid_entity_8hpp_source.html','')
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">private</span>:</div>
 <div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="class_asteroid_entity.html#a89f2987cfa51261bb3ea9398f5ae4f29">   13</a></span>&#160;    sf::CircleShape <a class="code" href="class_asteroid_entity.html#a89f2987cfa51261bb3ea9398f5ae4f29">m_Circle</a>;</div>
 <div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="class_asteroid_entity.html#a02d0f19ef99a6091a5c3ce9bf522c4fb">   14</a></span>&#160;    <a class="code" href="classphysics_1_1_particle.html">physics::Particle</a> <a class="code" href="class_asteroid_entity.html#a02d0f19ef99a6091a5c3ce9bf522c4fb">m_Particle</a>;</div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="class_asteroid_entity.html#a300017caed14c2c03cd6a293201e6793">   15</a></span>&#160;    CoordAdapter* <a class="code" href="class_asteroid_entity.html#a300017caed14c2c03cd6a293201e6793">m_CoordAdapter</a>;</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="class_asteroid_entity.html#a7a0387d1bdcd2499848e31bf6fda43ba">   15</a></span>&#160;    <a class="code" href="class_coord_adapter2_d.html">CoordAdapter2D</a>* <a class="code" href="class_asteroid_entity.html#a7a0387d1bdcd2499848e31bf6fda43ba">m_CoordAdapter</a>;</div>
 <div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="class_asteroid_entity.html#a22bf523732209742c38b68147a87f75c">   16</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_asteroid_entity.html#a22bf523732209742c38b68147a87f75c">isActive</a>;</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="class_asteroid_entity.html#a5ef27cca5dbb0aaffb9c0620e6e54774">   18</a></span>&#160;    <a class="code" href="class_asteroid_entity.html#a5ef27cca5dbb0aaffb9c0620e6e54774">AsteroidEntity</a>() : isActive(false) {}</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <a class="code" href="class_asteroid_entity.html#a5ef27cca5dbb0aaffb9c0620e6e54774">AsteroidEntity</a>(CoordAdapter* coordAdapter, <span class="keywordtype">float</span> radius, <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> pointCount, <span class="keywordtype">float</span> mass,</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <a class="code" href="class_asteroid_entity.html#a5ef27cca5dbb0aaffb9c0620e6e54774">AsteroidEntity</a>(<a class="code" href="class_coord_adapter2_d.html">CoordAdapter2D</a>* coordAdapter, <span class="keywordtype">float</span> radius, <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> pointCount, <span class="keywordtype">float</span> mass,</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                   <a class="code" href="classphysics_1_1_vector2_d.html">Vector2D</a> position, <a class="code" href="classphysics_1_1_vector2_d.html">Vector2D</a> velocity);</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="class_asteroid_entity.html#a1af4dd196e2efb0150e533ff5dfd1302">~AsteroidEntity</a>();</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
@@ -134,6 +134,7 @@ $(document).ready(function(){initNavTree('_asteroid_entity_8hpp_source.html','')
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;};</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#endif // ASTEROIDENTITY_HPP_</span></div>
+<div class="ttc" id="_coord_adapter2_d_8hpp_html"><div class="ttname"><a href="_coord_adapter2_d_8hpp.html">CoordAdapter2D.hpp</a></div></div>
 <div class="ttc" id="classphysics_1_1_particle_html"><div class="ttname"><a href="classphysics_1_1_particle.html">physics::Particle</a></div><div class="ttdef"><b>Definition:</b> particle.hpp:16</div></div>
 <div class="ttc" id="class_asteroid_entity_html_a5ef27cca5dbb0aaffb9c0620e6e54774"><div class="ttname"><a href="class_asteroid_entity.html#a5ef27cca5dbb0aaffb9c0620e6e54774">AsteroidEntity::AsteroidEntity</a></div><div class="ttdeci">AsteroidEntity()</div><div class="ttdef"><b>Definition:</b> AsteroidEntity.hpp:18</div></div>
 <div class="ttc" id="particle_8hpp_html"><div class="ttname"><a href="particle_8hpp.html">particle.hpp</a></div></div>
@@ -142,16 +143,17 @@ $(document).ready(function(){initNavTree('_asteroid_entity_8hpp_source.html','')
 <div class="ttc" id="class_asteroid_entity_html_a22bf523732209742c38b68147a87f75c"><div class="ttname"><a href="class_asteroid_entity.html#a22bf523732209742c38b68147a87f75c">AsteroidEntity::isActive</a></div><div class="ttdeci">bool isActive</div><div class="ttdef"><b>Definition:</b> AsteroidEntity.hpp:16</div></div>
 <div class="ttc" id="class_asteroid_entity_html_a1af4dd196e2efb0150e533ff5dfd1302"><div class="ttname"><a href="class_asteroid_entity.html#a1af4dd196e2efb0150e533ff5dfd1302">AsteroidEntity::~AsteroidEntity</a></div><div class="ttdeci">virtual ~AsteroidEntity()</div><div class="ttdef"><b>Definition:</b> AsteroidEntity.cpp:12</div></div>
 <div class="ttc" id="class_asteroid_entity_html_a02d0f19ef99a6091a5c3ce9bf522c4fb"><div class="ttname"><a href="class_asteroid_entity.html#a02d0f19ef99a6091a5c3ce9bf522c4fb">AsteroidEntity::m_Particle</a></div><div class="ttdeci">physics::Particle m_Particle</div><div class="ttdef"><b>Definition:</b> AsteroidEntity.hpp:14</div></div>
+<div class="ttc" id="class_asteroid_entity_html_a7a0387d1bdcd2499848e31bf6fda43ba"><div class="ttname"><a href="class_asteroid_entity.html#a7a0387d1bdcd2499848e31bf6fda43ba">AsteroidEntity::m_CoordAdapter</a></div><div class="ttdeci">CoordAdapter2D * m_CoordAdapter</div><div class="ttdef"><b>Definition:</b> AsteroidEntity.hpp:15</div></div>
 <div class="ttc" id="classphysics_1_1_vector2_d_html"><div class="ttname"><a href="classphysics_1_1_vector2_d.html">physics::Vector2D</a></div><div class="ttdef"><b>Definition:</b> Vector2D.hpp:15</div></div>
 <div class="ttc" id="class_asteroid_entity_html_a8a7f320ab26feddb00b64d5ae23e6a0a"><div class="ttname"><a href="class_asteroid_entity.html#a8a7f320ab26feddb00b64d5ae23e6a0a">AsteroidEntity::update</a></div><div class="ttdeci">void update(float duration)</div><div class="ttdef"><b>Definition:</b> AsteroidEntity.cpp:17</div></div>
-<div class="ttc" id="class_asteroid_entity_html_a300017caed14c2c03cd6a293201e6793"><div class="ttname"><a href="class_asteroid_entity.html#a300017caed14c2c03cd6a293201e6793">AsteroidEntity::m_CoordAdapter</a></div><div class="ttdeci">CoordAdapter * m_CoordAdapter</div><div class="ttdef"><b>Definition:</b> AsteroidEntity.hpp:15</div></div>
+<div class="ttc" id="class_coord_adapter2_d_html"><div class="ttname"><a href="class_coord_adapter2_d.html">CoordAdapter2D</a></div><div class="ttdoc">Adapter class to convert between differing (2D) coordinate systems (e.g. </div><div class="ttdef"><b>Definition:</b> CoordAdapter2D.hpp:14</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="_asteroid_entity_8hpp.html">AsteroidEntity.hpp</a></li>
-    <li class="footer">Generated on Wed Oct 28 2015 19:02:19 for SiniClone by
+    <li class="footer">Generated on Fri Oct 30 2015 19:18:15 for SiniClone by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.10 </li>
   </ul>

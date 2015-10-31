@@ -9,7 +9,7 @@ var class_game =
     [ "~Game", "class_game.html#ae3d112ca6e0e55150d2fdbc704474530", null ],
     [ "dtSMAinit", "class_game.html#af8bfefb35744b0a38b606ebea12a699c", null ],
     [ "dtSMAupdate", "class_game.html#ac3da8e0c6c6eda241a342ae8afa8188c", null ],
-    [ "run", "class_game.html#a1ab78f5ed0d5ea879157357cf2fb2afa", null ],
+    [ "run", "class_game.html#a99fb161fbbe87d25a8b73265a0611e58", null ],
     [ "runClientFrame", "class_game.html#aa83187b103daf48db443b7634248796b", null ],
     [ "runServerFrame", "class_game.html#af63f5b523335a1edac2ea44369137d3d", null ],
     [ "startGame", "class_game.html#a8b878f8d1e0d640066d4851d1e3b66c5", null ],
@@ -22,5 +22,6 @@ var class_game =
     [ "m_dtSMA_period", "class_game.html#af847c8f5c59ea0085f391a8d769e4746", null ],
     [ "m_GameType", "class_game.html#a1c60ae5f5cede4107d2bc1454146bc67", null ],
     [ "m_isRunning", "class_game.html#aa4ee40abfc0ac4eddfdcecd6b473c295", null ],
+    [ "m_mainView", "class_game.html#a787213cdce2cb27753d2253ec6d35e0e", null ],
     [ "m_window", "class_game.html#a22a61b5ea27c609be8cf2724c33d7ae5", null ]
 ];

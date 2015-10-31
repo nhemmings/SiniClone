@@ -1,10 +1,10 @@
 <map id="main" name="main">
-<area shape="rect" id="node2" href="$class_game.html#a1ab78f5ed0d5ea879157357cf2fb2afa" title="Game::run" alt="" coords="104,314,187,341"/>
+<area shape="rect" id="node2" href="$class_game.html#a99fb161fbbe87d25a8b73265a0611e58" title="Game::run" alt="" coords="104,314,187,341"/>
 <area shape="rect" id="node3" href="$class_game.html#a8b878f8d1e0d640066d4851d1e3b66c5" title="Game::startGame" alt="" coords="251,207,377,234"/>
 <area shape="rect" id="node10" href="$class_game.html#af63f5b523335a1edac2ea44369137d3d" title="Game::runServerFrame" alt="" coords="235,289,393,315"/>
 <area shape="rect" id="node11" href="$class_game.html#aa83187b103daf48db443b7634248796b" title="Game::runClientFrame" alt="" coords="237,339,391,366"/>
 <area shape="rect" id="node19" href="$class_game.html#ac3da8e0c6c6eda241a342ae8afa8188c" title="Game::dtSMAupdate" alt="" coords="242,390,386,417"/>
-<area shape="rect" id="node4" href="$class_asteroid_pool.html#a984b3c6398cbd53c75137dfe4883ecb8" title="AsteroidPool::addAsteroid" alt="" coords="454,177,627,203"/>
+<area shape="rect" id="node4" href="$class_asteroid_pool.html#a984b3c6398cbd53c75137dfe4883ecb8" title="Creates a new asteroid in the pool, initializing it with the provided parameters (provided the pool i..." alt="" coords="454,177,627,203"/>
 <area shape="rect" id="node5" href="$classphysics_1_1_particle.html#a5482d86d6b7697dc28380319b63ae2b1" title="Sets the mass of the particle. " alt="" coords="733,5,860,47"/>
 <area shape="rect" id="node6" href="$classphysics_1_1_particle.html#a44c685836aa0fcd9a950a2de95743291" title="physics::Particle::\lsetDamping" alt="" coords="733,71,860,112"/>
 <area shape="rect" id="node7" href="$classphysics_1_1_particle.html#a29fcfe2d2b5aa3cb5d897e1177823da2" title="physics::Particle::\lsetPosition" alt="" coords="733,136,860,177"/>
