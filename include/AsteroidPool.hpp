@@ -13,7 +13,7 @@
 class AsteroidPool
 {
 private:
-    static const unsigned s_maxAsteroids = 25;  /**< Maximum number of asteroids allowed in the pool. */
+    const unsigned m_maxAsteroids = 25;         /**< Maximum number of asteroids allowed in the pool. */
     sf::CircleShape* m_Circles;                 /**< Pointer to array of asteroid sprites. */
     physics::Particle* m_Particles;             /**< Pointer to array of asteroid particles. */
     const CoordAdapter2D & m_CoordAdapter;      /**< Adapter to convert between physics and graphics coord systems */
@@ -22,7 +22,7 @@ public:
     /**
      *  Constructs a basic AsteroidPool with the given CoordAdapter2D.
      */
-    explicit AsteroidPool(const CoordAdapter2D & adapter);
+    explicit AsteroidPool(const CoordAdapter2D & adapter, unsigned maxAsteroids);
     virtual ~AsteroidPool();
 
     /**

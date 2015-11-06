@@ -30,6 +30,7 @@
 					<Add library="jpeg" />
 					<Add library="winmm" />
 					<Add library="gdi32" />
+					<Add library="lua" />
 				</Linker>
 			</Target>
 			<Target title="Release">
@@ -62,16 +63,21 @@
 			<Add option="-Wall" />
 			<Add directory="include" />
 			<Add directory="res/SFML/include" />
+			<Add directory="res/lua/include" />
 		</Compiler>
 		<Linker>
 			<Add option="-static-libgcc" />
 			<Add option="-static-libstdc++" />
 			<Add directory="lib" />
 			<Add directory="res/SFML/lib" />
+			<Add directory="res/lua/lib" />
 		</Linker>
 		<Unit filename="include/AsteroidPool.hpp" />
 		<Unit filename="include/CoordAdapter2D.hpp" />
 		<Unit filename="include/Game.hpp" />
+		<Unit filename="include/LuaScript.hpp" />
+		<Unit filename="include/ScriptEngine.hpp" />
+		<Unit filename="include/Services.hpp" />
 		<Unit filename="include/physics/Vector2D.hpp" />
 		<Unit filename="include/physics/Vector3D.hpp" />
 		<Unit filename="include/physics/particle.hpp" />
@@ -79,6 +85,8 @@
 		<Unit filename="src/AsteroidEntity.cpp" />
 		<Unit filename="src/AsteroidPool.cpp" />
 		<Unit filename="src/Game.cpp" />
+		<Unit filename="src/LuaScript.cpp" />
+		<Unit filename="src/Services.cpp" />
 		<Unit filename="src/main.cpp" />
 		<Unit filename="src/physics/particle.cpp" />
 		<Extensions>

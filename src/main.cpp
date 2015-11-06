@@ -5,6 +5,8 @@
  *  execution off to the primary Game object.
  */
 #include "Game.hpp"
+#include "Services.hpp"
+#include "LuaScript.hpp"
 
 #ifdef DEBUG
 #include <iostream>
@@ -29,7 +31,9 @@ int main(int argc, char** argv)
     // STUB: Splash can be developed later
 
     // Load dependencies
-    // STUB: No dependencies at this time
+    ScriptEngine* luaService = new LuaScript();
+    Services::provideScriptEngine(luaService);
+    luaService->loadscript("config.lua");
 
     // Create main Game object and pass off execution
     Game theGame;

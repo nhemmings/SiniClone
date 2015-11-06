@@ -4,10 +4,12 @@
 #include <iostream>
 #endif // DEBUG
 
-AsteroidPool::AsteroidPool(const CoordAdapter2D & adapter) : m_CoordAdapter(adapter), m_activeIndex(0)
+AsteroidPool::AsteroidPool(const CoordAdapter2D & adapter, unsigned maxAsteroids) : m_maxAsteroids(maxAsteroids),
+                                                                                    m_CoordAdapter(adapter),
+                                                                                    m_activeIndex(0)
 {
-    m_Circles = new sf::CircleShape[s_maxAsteroids];
-    m_Particles = new physics::Particle[s_maxAsteroids];
+    m_Circles = new sf::CircleShape[m_maxAsteroids];
+    m_Particles = new physics::Particle[m_maxAsteroids];
     m_Circles[0].setFillColor(sf::Color::White);
 }
 
@@ -19,7 +21,7 @@ AsteroidPool::~AsteroidPool()
 
 int AsteroidPool::addAsteroid(float radius, unsigned short pointCount, float mass, float damping,
                               Vector2D pos, Vector2D vel, Vector2D accel) {
-    if (m_activeIndex >= s_maxAsteroids)
+    if (m_activeIndex >= m_maxAsteroids)
         return -1;
     m_Circles[m_activeIndex].setRadius(radius);
     m_Circles[m_activeIndex].setPointCount(pointCount);
