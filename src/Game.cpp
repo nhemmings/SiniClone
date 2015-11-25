@@ -6,7 +6,7 @@
 #endif // DEBUG
 
 Game::Game() : m_dtServerFrame(sf::seconds(1.0/20.0f)), m_dtIdeal(sf::seconds(1.0/1500.0f)),
-               m_CoordAdapter(Vector2u(800,600)), m_AsteroidPool(m_CoordAdapter), m_isRunning(false)
+               m_CoordAdapter(Vector2u(800,600)), m_AsteroidPool(m_CoordAdapter, 25), m_isRunning(false)
 {
     sf::ContextSettings settings;
     settings.antialiasingLevel = 6;
