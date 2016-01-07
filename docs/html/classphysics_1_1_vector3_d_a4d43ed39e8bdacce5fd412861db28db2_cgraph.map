@@ -1,5 +1,0 @@
-<map id="physics::Vector3D::makeOrthonormalBasis" name="physics::Vector3D::makeOrthonormalBasis">
-<area shape="rect" id="node2" href="$classphysics_1_1_vector3_d.html#a9651edd979a074f2a7b40dc3f225f732" title="Turns a non&#45;zero vector into a vector of unit length. " alt="" coords="212,5,351,47"/>
-<area shape="rect" id="node4" href="$classphysics_1_1_vector3_d.html#a0343887ede87209eab4c3590aeb12954" title="Gets the squared magnitude of this vector. " alt="" coords="212,71,351,112"/>
-<area shape="rect" id="node3" href="$classphysics_1_1_vector3_d.html#af4bc142a62c6a6753a4b9526b897ce3b" title="Gets the magnitude of this vector. " alt="" coords="399,5,537,47"/>
-</map>

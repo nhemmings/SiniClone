@@ -1,7 +1,0 @@
-<map id="AsteroidPool::updateAsteroids" name="AsteroidPool::updateAsteroids">
-<area shape="rect" id="node2" href="$classphysics_1_1_particle.html#adc7887e2ffdd18346d8903b48603930e" title="Integrates the particle forward in time by the given amount. " alt="" coords="297,39,424,80"/>
-<area shape="rect" id="node6" href="$class_coord_adapter2_d.html#a424c786458fc81b5872f124d9190cbe0" title="Converts the provided vector from physics space to graphics space. " alt="" coords="252,105,469,131"/>
-<area shape="rect" id="node3" href="$classphysics_1_1_vector2_d.html#a5ebb1e595757810177a362862826206e" title="Scales the given vector by the given amount and adds the result to this vector. " alt="" coords="517,5,656,47"/>
-<area shape="rect" id="node4" href="$classphysics_1_1_particle.html#a191d8818ced54612f509233c741422d2" title="physics::Particle::\lclearAccumulator" alt="" coords="523,71,650,112"/>
-<area shape="rect" id="node5" href="$classphysics_1_1_vector2_d.html#a4cdff602394f0761c4ccbae283dee4c3" title="physics::Vector2D::\lclear" alt="" coords="704,71,843,112"/>
-</map>

@@ -1,8 +1,0 @@
-<map id="Game.cpp" name="Game.cpp">
-<area shape="rect" id="node3" href="$_game_8hpp.html" title="Game.hpp" alt="" coords="199,80,281,107"/>
-<area shape="rect" id="node5" href="$_coord_adapter2_d_8hpp.html" title="CoordAdapter2D.hpp" alt="" coords="168,229,312,256"/>
-<area shape="rect" id="node11" href="$_asteroid_pool_8hpp.html" title="AsteroidPool.hpp" alt="" coords="311,155,433,181"/>
-<area shape="rect" id="node7" href="$_vector2_d_8hpp.html" title="physics/Vector2D.hpp" alt="" coords="330,304,481,331"/>
-<area shape="rect" id="node9" href="$precision_8hpp.html" title="precision.hpp" alt="" coords="407,379,505,405"/>
-<area shape="rect" id="node13" href="$particle_8hpp.html" title="physics/particle.hpp" alt="" coords="336,229,475,256"/>
-</map>

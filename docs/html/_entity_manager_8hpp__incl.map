@@ -1,7 +1,0 @@
-<map id="EntityManager.hpp" name="EntityManager.hpp">
-<area shape="rect" id="node4" href="$_asteroid_entity_8hpp.html" title="AsteroidEntity.hpp" alt="" coords="241,80,370,107"/>
-<area shape="rect" id="node5" href="$particle_8hpp.html" title="physics/particle.hpp" alt="" coords="213,155,352,181"/>
-<area shape="rect" id="node10" href="$_coord_adapter2_d_8hpp.html" title="CoordAdapter2D.hpp" alt="" coords="376,155,520,181"/>
-<area shape="rect" id="node6" href="$_vector2_d_8hpp.html" title="Vector2D.hpp" alt="" coords="243,229,346,256"/>
-<area shape="rect" id="node8" href="$precision_8hpp.html" title="precision.hpp" alt="" coords="297,304,396,331"/>
-</map>

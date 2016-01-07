@@ -1,4 +1,0 @@
-<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$class_coord_adapter2_d.html" title="Adapter class to convert between differing (2D) coordinate systems (e.g. " alt="" coords="5,5,124,32"/>
-<area shape="rect" id="node2" href="$class_game_1_1_s_f_m_l_coord_adapter.html" title="Provides helper functions to convert between the SFML coordinate system and the physics engine&#39;s coor..." alt="" coords="172,5,352,32"/>
-</map>

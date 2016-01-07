@@ -1,7 +1,0 @@
-<map id="AsteroidPool::addAsteroid" name="AsteroidPool::addAsteroid">
-<area shape="rect" id="node2" href="$classphysics_1_1_particle.html#a5482d86d6b7697dc28380319b63ae2b1" title="Sets the mass of the particle. " alt="" coords="227,5,353,47"/>
-<area shape="rect" id="node3" href="$classphysics_1_1_particle.html#a44c685836aa0fcd9a950a2de95743291" title="physics::Particle::\lsetDamping" alt="" coords="227,71,353,112"/>
-<area shape="rect" id="node4" href="$classphysics_1_1_particle.html#a29fcfe2d2b5aa3cb5d897e1177823da2" title="physics::Particle::\lsetPosition" alt="" coords="227,136,353,177"/>
-<area shape="rect" id="node5" href="$classphysics_1_1_particle.html#ac9f1f9653a4194e4073685f3b843a21e" title="physics::Particle::\lsetVelocity" alt="" coords="227,201,353,243"/>
-<area shape="rect" id="node6" href="$classphysics_1_1_particle.html#aea6f760f13ff9202802eb8ada8f56105" title="physics::Particle::\lsetAcceleration" alt="" coords="227,267,353,308"/>
-</map>
