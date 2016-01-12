@@ -89,8 +89,9 @@ void Game::runClientFrame(const sf::Time & dt, sf::RenderWindow & rwindow) {
 }
 
 void Game::dtSMAinit(const sf::Time & dtIdeal) {
-    for (int i = 0; i < m_dtSMA_period; i++) {
-        m_dtHistory[i] = dtIdeal / sf::Int64(m_dtSMA_period);
+    m_dtHistory[0] = dtIdeal / sf::Int64(m_dtSMA_period);
+    for (int i = 1; i < m_dtSMA_period; i++) {
+        m_dtHistory[i] = m_dtHistory[0];
     }
 }
 
