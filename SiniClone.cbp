@@ -79,7 +79,6 @@
 		<Unit filename="include/physics/Vector3D.hpp" />
 		<Unit filename="include/physics/particle.hpp" />
 		<Unit filename="include/physics/precision.hpp" />
-		<Unit filename="src/AsteroidEntity.cpp" />
 		<Unit filename="src/AsteroidPool.cpp" />
 		<Unit filename="src/Game.cpp" />
 		<Unit filename="src/main.cpp" />
