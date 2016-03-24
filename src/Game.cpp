@@ -1,5 +1,6 @@
 #include <cstdlib>
 #include "Game.hpp"
+#include "physics/ParticleSystem.hpp"
 
 #ifdef DEBUG
 #include <iostream>
