@@ -11,6 +11,7 @@
 				<Option output="bin/Debug/SiniClone" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="bin/Debug" />
 				<Option object_output="build/Debug/" />
+				<Option external_deps="../tacoTruck/bin/Debug/libtacoTruck-s-d.a;" />
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Compiler>
@@ -31,12 +32,15 @@
 					<Add library="winmm" />
 					<Add library="gdi32" />
 					<Add library="lua" />
+					<Add library="tacoTruck-s-d" />
+					<Add directory="../tacoTruck/bin/Debug" />
 				</Linker>
 			</Target>
 			<Target title="Release">
 				<Option output="bin/Release/SiniClone" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="bin/Release" />
 				<Option object_output="build/Release/" />
+				<Option external_deps="../tacoTruck/bin/Release/libtacoTruck-s.a;" />
 				<Option type="0" />
 				<Option compiler="gcc" />
 				<Compiler>
@@ -56,6 +60,8 @@
 					<Add library="jpeg" />
 					<Add library="winmm" />
 					<Add library="gdi32" />
+					<Add library="tacoTruck-s" />
+					<Add directory="../tacoTruck/bin/Release" />
 				</Linker>
 			</Target>
 		</Build>
@@ -64,6 +70,7 @@
 			<Add directory="include" />
 			<Add directory="res/SFML/include" />
 			<Add directory="res/lua/include" />
+			<Add directory="../tacoTruck/include" />
 		</Compiler>
 		<Linker>
 			<Add option="-static-libgcc" />
@@ -72,18 +79,9 @@
 			<Add directory="res/SFML/lib" />
 			<Add directory="res/lua/lib" />
 		</Linker>
-		<Unit filename="include/AsteroidPool.hpp" />
-		<Unit filename="include/CoordAdapter2D.hpp" />
 		<Unit filename="include/Game.hpp" />
-		<Unit filename="include/physics/Vector2D.hpp" />
-		<Unit filename="include/physics/Vector3D.hpp" />
-		<Unit filename="include/physics/particle.hpp" />
-		<Unit filename="include/physics/precision.hpp" />
-		<Unit filename="src/AsteroidEntity.cpp" />
-		<Unit filename="src/AsteroidPool.cpp" />
 		<Unit filename="src/Game.cpp" />
 		<Unit filename="src/main.cpp" />
-		<Unit filename="src/physics/particle.cpp" />
 		<Extensions>
 			<code_completion />
 			<debugger />
