@@ -13,7 +13,7 @@ Game::Game() : m_mainView(sf::Vector2f(0, 0), sf::Vector2f(400, 400)), m_dtServe
     m_dtSMA = m_dtIdeal;
 
     circles = new sf::CircleShape[40];
-    particles = new physics::Particle[40];
+    particles = new tacoTruck::Particle[40];
 }
 
 Game::~Game()
@@ -137,10 +137,10 @@ void Game::startGame(const GameType newGameType) {
     m_isRunning = true;
 }
 
-sf::Vector2f Game::coordWorldToView(const physics::Vector2D coord) const {
+sf::Vector2f Game::coordWorldToView(const tacoTruck::Vector2D coord) const {
     return sf::Vector2f(coord.x, -coord.y);
 }
 
-physics::Vector2D Game::coordViewToWorld(const sf::View & view, const sf::Vector2f & coord) {
-    return physics::Vector2D();
+tacoTruck::Vector2D Game::coordViewToWorld(const sf::View & view, const sf::Vector2f & coord) {
+    return tacoTruck::Vector2D();
 }

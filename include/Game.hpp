@@ -33,10 +33,10 @@ private:
     sf::Time dtSMAupdate(const sf::Time & dtCurrent);
 
     sf::CircleShape* circles;
-    physics::Particle* particles;
+    tacoTruck::Particle* particles;
 
-    sf::Vector2f coordWorldToView(const physics::Vector2D coord) const;
-    physics::Vector2D coordViewToWorld(const sf::View & view, const sf::Vector2f & coord);
+    sf::Vector2f coordWorldToView(const tacoTruck::Vector2D coord) const;
+    tacoTruck::Vector2D coordViewToWorld(const sf::View & view, const sf::Vector2f & coord);
 public:
     Game();
     virtual ~Game();
