@@ -2,6 +2,8 @@
 #include "Game.hpp"
 #include <ctime>
 
+#define numParticles 2
+
 Game::Game() : m_mainView(sf::Vector2f(0, 0), sf::Vector2f(400, 400)), m_dtServerFrame(sf::seconds(1.0/20.0f)),
                m_dtIdeal(sf::seconds(1.0/60.0f)), m_isRunning(false)
 {
@@ -94,7 +96,8 @@ void Game::runClientFrame(const sf::Time & dt, sf::RenderWindow & rwindow) {
     rwindow.clear();
     rwindow.setView(m_mainView);
 
-    for (int i = 0; i < 40; i++) {
+    pfReg.updateForces(dt.asSeconds());
+    for (int i = 0; i < numParticles; i++) {
         particles[i].integrate(dt.asSeconds());
         circles[i].setPosition(coordWorldToView((particles[i].getPosition())));
         rwindow.draw(circles[i]);
@@ -122,18 +125,38 @@ sf::Time Game::dtSMAupdate(const sf::Time & dtCurrent) {
 
 void Game::startGame(const GameType newGameType) {
     srand(time(NULL));
-    for (int i = 0; i < 40; i++) {
-        circles[i].setRadius(rand() % 10 + 5);
-        circles[i].setPointCount(20);
-        circles[i].setFillColor(sf::Color(128, 128, 128));
-        circles[i].setOutlineColor(sf::Color::White);
+    for (int i = 0; i < numParticles; i++) {
+        circles[i].setRadius(10);
+        circles[i].setPointCount(30);
+        circles[i].setFillColor(sf::Color::White);
+        circles[i].setOutlineColor(sf::Color::Red);
         circles[i].setOutlineThickness(-2.0);
+    }
 
-        particles[i].setPosition(rand() % 800 - 400, rand() % 800 - 400);
-        particles[i].setVelocity(rand() % 60 - 30, rand() % 60 - 30);
-        particles[i].setMass(0.01);
+    particles[0].setPosition(-100, 0);
+    particles[1].setPosition( 100, 0);
+
+    for (int i = 0; i < numParticles; i++) {
+        particles[i].setVelocity(0, 0);
+        particles[i].setMass(1.0);
         particles[i].setDamping(0.999);
     }
+
+    tacoTruck::ParticleGravity *pGravity = new tacoTruck::ParticleGravity(tacoTruck::Vector2D(0, -9.8));
+    pfReg.add(&particles[0], pGravity);
+
+//    for (int i = 0; i < 40; i++) {
+//        circles[i].setRadius(rand() % 10 + 5);
+//        circles[i].setPointCount(20);
+//        circles[i].setFillColor(sf::Color(128, 128, 128));
+//        circles[i].setOutlineColor(sf::Color::White);
+//        circles[i].setOutlineThickness(-2.0);
+//
+//        particles[i].setPosition(rand() % 800 - 400, rand() % 800 - 400);
+//        particles[i].setVelocity(rand() % 60 - 30, rand() % 60 - 30);
+//        particles[i].setMass(0.01);
+//        particles[i].setDamping(0.999);
+//    }
     m_isRunning = true;
 }
 

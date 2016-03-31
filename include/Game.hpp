@@ -4,6 +4,7 @@
 #include <SFML/Graphics.hpp>
 #include "particle.hpp"
 #include "Vector2D.hpp"
+#include "pfgen.hpp"
 
 /**
  *  The primary game logic and entry point. Initializes the game's subsystems and manages the viewing window.
@@ -34,6 +35,7 @@ private:
 
     sf::CircleShape* circles;
     tacoTruck::Particle* particles;
+    tacoTruck::ParticleForceRegistry pfReg;
 
     sf::Vector2f coordWorldToView(const tacoTruck::Vector2D coord) const;
     tacoTruck::Vector2D coordViewToWorld(const sf::View & view, const sf::Vector2f & coord);
