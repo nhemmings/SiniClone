@@ -4,7 +4,7 @@
 
 #define numParticles 2
 
-Game::Game() : m_mainView(sf::Vector2f(0, 0), sf::Vector2f(400, 400)), m_dtServerFrame(sf::seconds(1.0/20.0f)),
+Game::Game() : m_mainView(sf::Vector2f(0, 0), sf::Vector2f(800, 800)), m_dtServerFrame(sf::seconds(1.0/20.0f)),
                m_dtIdeal(sf::seconds(1.0/60.0f)), m_isRunning(false)
 {
     sf::ContextSettings settings;
@@ -61,12 +61,16 @@ int Game::run() {
                 else if (event.key.code == sf::Keyboard::D) {
                     m_mainView.move(1, 0);
                 }
-                else if (!m_isRunning && event.key.code == sf::Keyboard::S) {
+                else if (event.key.code == sf::Keyboard::R) {
+                    m_isRunning = !m_isRunning;
                     startGame(SinglePlayer);
                 }
-                else if (!m_isRunning && event.key.code == sf::Keyboard::M) {
-                    startGame(MultiPlayer);
+                else if (event.key.code == sf::Keyboard::E) {
+                    pAirbrake->toggleActive();
                 }
+                /*else if (!m_isRunning && event.key.code == sf::Keyboard::M) {
+                    startGame(MultiPlayer);
+                }*/
             }
         }
 
@@ -130,26 +134,32 @@ void Game::startGame(const GameType newGameType) {
         circles[i].setPointCount(30);
         circles[i].setFillColor(sf::Color::White);
         circles[i].setOutlineColor(sf::Color::Red);
-        circles[i].setOutlineThickness(-2.0);
+        circles[i].setOutlineThickness(-1.0);
     }
 
-    particles[0].setPosition(-100, 0);
-    particles[1].setPosition( 100, 0);
+    particles[0].setPosition(-300, 0);
+    particles[1].setPosition( 0, 0);
 
     for (int i = 0; i < numParticles; i++) {
         particles[i].setVelocity(0, 0);
+        particles[i].setAcceleration(0, 0);
         particles[i].setMass(1.0);
-        particles[i].setDamping(0.999);
+        particles[i].setDamping(0.95);
+        particles[i].clearAccumulator();
     }
+    particles[0].setVelocity(0, 825);
 
     tacoTruck::ParticleGravity *pGravity = new tacoTruck::ParticleGravity(tacoTruck::Vector2D(0, -9.8));
     tacoTruck::ParticleUplift *pUplift = new tacoTruck::ParticleUplift(tacoTruck::Vector2D(-1, 15),
                                                                        tacoTruck::Vector2D(90, 5),
                                                                        40);
-    tacoTruck::ParticleAirbrake *pAirbrake = new tacoTruck::ParticleAirbrake(1.0);
-    pfReg.add(&particles[0], pGravity);
-    pfReg.add(&particles[0], pAirbrake);
-    pfReg.add(&particles[1], pGravity);
+    pAirbrake = new tacoTruck::ParticleAirbrake(0.01, 0.01, false);
+    tacoTruck::ParticleAttraction *pAttract = new tacoTruck::ParticleAttraction(5, tacoTruck::Vector2D(0, 0));
+//    pfReg.add(&particles[0], pGravity);
+//    pfReg.add(&particles[0], pAirbrake);
+//    pfReg.add(&particles[1], pGravity);
+//    pfReg.add(&particles[1], pUplift);
+    pfReg.add(&particles[0], pAttract);
 
 //    for (int i = 0; i < 40; i++) {
 //        circles[i].setRadius(rand() % 10 + 5);

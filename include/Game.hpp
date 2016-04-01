@@ -36,6 +36,7 @@ private:
     sf::CircleShape* circles;
     tacoTruck::Particle* particles;
     tacoTruck::ParticleForceRegistry pfReg;
+    tacoTruck::ParticleAirbrake *pAirbrake;
 
     sf::Vector2f coordWorldToView(const tacoTruck::Vector2D coord) const;
     tacoTruck::Vector2D coordViewToWorld(const sf::View & view, const sf::Vector2f & coord);
