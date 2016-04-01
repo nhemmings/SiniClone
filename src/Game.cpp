@@ -143,7 +143,13 @@ void Game::startGame(const GameType newGameType) {
     }
 
     tacoTruck::ParticleGravity *pGravity = new tacoTruck::ParticleGravity(tacoTruck::Vector2D(0, -9.8));
+    tacoTruck::ParticleUplift *pUplift = new tacoTruck::ParticleUplift(tacoTruck::Vector2D(-1, 15),
+                                                                       tacoTruck::Vector2D(90, 5),
+                                                                       40);
+    tacoTruck::ParticleAirbrake *pAirbrake = new tacoTruck::ParticleAirbrake(1.0);
     pfReg.add(&particles[0], pGravity);
+    pfReg.add(&particles[0], pAirbrake);
+    pfReg.add(&particles[1], pGravity);
 
 //    for (int i = 0; i < 40; i++) {
 //        circles[i].setRadius(rand() % 10 + 5);
