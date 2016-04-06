@@ -2,6 +2,8 @@
 #include "Game.hpp"
 #include <ctime>
 
+#include <iostream>
+
 #define numParticles 2
 
 Game::Game() : m_mainView(sf::Vector2f(0, 0), sf::Vector2f(800, 800)), m_dtServerFrame(sf::seconds(1.0/20.0f)),
@@ -136,7 +138,7 @@ void Game::startGame(const GameType newGameType) {
     }
     circles[0].setFillColor(sf::Color::Red);
     circles[0].setOutlineColor(sf::Color::White);
-    particles[0].setPosition(-300, 0);
+    particles[0].setPosition(-20, 0);
 
     circles[1].setFillColor(sf::Color::White);
     circles[1].setOutlineColor(sf::Color::Red);
@@ -149,24 +151,31 @@ void Game::startGame(const GameType newGameType) {
         particles[i].setDamping(0.95f);
         particles[i].clearAccumulator();
     }
-    particles[0].setVelocity(0, 25);
+//    particles[0].setVelocity(0, 25);
 
-//    tacoTruck::ParticleGravity *pGravity = new tacoTruck::ParticleGravity(tacoTruck::Vector2D(0, -9.8));
+    tacoTruck::ParticleGravity *pGravity = new tacoTruck::ParticleGravity(tacoTruck::Vector2D(0, -10));
 //    tacoTruck::ParticleUplift *pUplift = new tacoTruck::ParticleUplift(tacoTruck::Vector2D(-1, 15),
 //                                                                       tacoTruck::Vector2D(90, 5),
 //                                                                       40);
 //    pAirbrake = new tacoTruck::ParticleAirbrake(0.01, 0.01, false);
 //    tacoTruck::ParticleAttraction *pAttract = new tacoTruck::ParticleAttraction(5, tacoTruck::Vector2D(0, 0));
-    tacoTruck::ParticleSpring *pSpring1 = new tacoTruck::ParticleSpring(&particles[1], 0.1, 250);
-    tacoTruck::ParticleSpring *pSpring2 = new tacoTruck::ParticleSpring(&particles[0], 0.1, 250);
+//    tacoTruck::ParticleSpring *pSpring1 = new tacoTruck::ParticleSpring(&particles[1], 0.1, 250);
+//    tacoTruck::ParticleSpring *pSpring2 = new tacoTruck::ParticleSpring(&particles[0], 0.1, 250);
+    tacoTruck::Vector2D *anchor = new tacoTruck::Vector2D(-20.0f, 50.0f);
+    tacoTruck::ParticleAnchoredSpring *pAnchoredSpring = new tacoTruck::ParticleAnchoredSpring(anchor, 0.75, 20);
+//    tacoTruck::ParticleBungee *pBungee1 = new tacoTruck::ParticleBungee(&particles[1], 1.0, 18);
+//    tacoTruck::ParticleBungee *pBungee2 = new tacoTruck::ParticleBungee(&particles[0], 1.0, 18);
 
-//    pfReg.add(&particles[0], pGravity);
+    pfReg.add(&particles[0], pGravity);
 //    pfReg.add(&particles[0], pAirbrake);
 //    pfReg.add(&particles[1], pGravity);
 //    pfReg.add(&particles[1], pUplift);
 //    pfReg.add(&particles[0], pAttract);
-    pfReg.add(&particles[0], pSpring1);
-    pfReg.add(&particles[1], pSpring2);
+//    pfReg.add(&particles[0], pSpring1);
+//    pfReg.add(&particles[1], pSpring2);
+//    pfReg.add(&particles[0], pBungee1);
+//    pfReg.add(&particles[1], pBungee2);
+    pfReg.add(&particles[0], pAnchoredSpring);
 
 //    for (int i = 0; i < 40; i++) {
 //        circles[i].setRadius(rand() % 10 + 5);
