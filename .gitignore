@@ -31,6 +31,7 @@ bin/
 
 # External Resources
 # res/
+!res/TacoTruck/lib/*
 
 # Execution working directories
 run/
