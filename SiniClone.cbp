@@ -11,7 +11,6 @@
 				<Option output="bin/Debug/SiniClone" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="bin/Debug" />
 				<Option object_output="build/Debug/" />
-				<Option external_deps="../tacoTruck/bin/Debug/libtacoTruck-s-d.a;" />
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Compiler>
@@ -33,7 +32,6 @@
 					<Add library="gdi32" />
 					<Add library="lua" />
 					<Add library="tacoTruck-s-d" />
-					<Add directory="../tacoTruck/bin/Debug" />
 				</Linker>
 			</Target>
 			<Target title="Release">
@@ -61,7 +59,7 @@
 					<Add library="winmm" />
 					<Add library="gdi32" />
 					<Add library="tacoTruck-s" />
-					<Add directory="../tacoTruck/bin/Release" />
+					<Add directory="res/tacoTruck/bin/Release" />
 				</Linker>
 			</Target>
 		</Build>
@@ -70,7 +68,7 @@
 			<Add directory="include" />
 			<Add directory="res/SFML/include" />
 			<Add directory="res/lua/include" />
-			<Add directory="../tacoTruck/include" />
+			<Add directory="res/TacoTruck/include" />
 		</Compiler>
 		<Linker>
 			<Add option="-static-libgcc" />
@@ -78,6 +76,7 @@
 			<Add directory="lib" />
 			<Add directory="res/SFML/lib" />
 			<Add directory="res/lua/lib" />
+			<Add directory="res/TacoTruck/lib" />
 		</Linker>
 		<Unit filename="include/Game.hpp" />
 		<Unit filename="src/Game.cpp" />
