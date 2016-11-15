@@ -4,7 +4,6 @@
 #include <SFML/Graphics.hpp>
 #include "particle.hpp"
 #include "Vector2D.hpp"
-#include "pfgen.hpp"
 
 /**
  *  The primary game logic and entry point. Initializes the game's subsystems and manages the viewing window.
@@ -13,8 +12,8 @@ class Game
 {
 private:
     enum GameType {SinglePlayer, MultiPlayer}; /**< Enumeration of game modes. */
-
     GameType m_GameType;
+
     sf::RenderWindow m_window;
     sf::View m_mainView;
     const sf::Time m_dtServerFrame;
@@ -35,8 +34,6 @@ private:
 
     sf::CircleShape* circles;
     tacoTruck::Particle* particles;
-    tacoTruck::ParticleForceRegistry pfReg;
-    tacoTruck::ParticleAirbrake *pAirbrake;
 
     sf::Vector2f coordWorldToView(const tacoTruck::Vector2D coord) const;
     tacoTruck::Vector2D coordViewToWorld(const sf::View & view, const sf::Vector2f & coord);
