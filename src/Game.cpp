@@ -6,12 +6,12 @@
 
 #define numParticles 5
 
-Game::Game() : m_mainView(sf::Vector2f(0, 0), sf::Vector2f(800, 800)), m_dtServerFrame(sf::seconds(1.0/20.0f)),
+Game::Game() : m_mainView(sf::Vector2f(400, 300), sf::Vector2f(800, 600)), m_dtServerFrame(sf::seconds(1.0/20.0f)),
                m_dtIdeal(sf::seconds(1.0/60.0f)), m_isRunning(false)
 {
     sf::ContextSettings settings;
     settings.antialiasingLevel = 6;
-    m_window.create(sf::VideoMode(800, 800), "Siniclone", sf::Style::Default, settings);
+    m_window.create(sf::VideoMode(800, 600), "Siniclone", sf::Style::Default, settings);
     m_window.setView(m_mainView);
     dtSMAinit(m_dtIdeal);
     m_dtSMA = m_dtIdeal;
@@ -129,7 +129,16 @@ void Game::startGame(const GameType newGameType) {
         circles[i].setRadius(10);
         circles[i].setPointCount(30);
         circles[i].setFillColor(sf::Color::Black);
+        circles[i].setOrigin(10, 10);
+
+        int circle_x, circle_y;
+        circle_x = rand() % 760 + 30;
+        circle_y = rand() % 560 + 30;
+        circles[i].setPosition(circle_x, circle_y);
+
+        std::cout << "Circle " << i+1 << ": X: " << circle_x << "\tY: " << circle_y << std::endl;
     }
+    std::cout << std::endl;
     m_isRunning = true;
 }
 
