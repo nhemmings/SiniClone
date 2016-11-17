@@ -79,8 +79,10 @@
 			<Add directory="res/TacoTruck/lib" />
 		</Linker>
 		<Unit filename="include/Game.hpp" />
+		<Unit filename="include/networking.hpp" />
 		<Unit filename="src/Game.cpp" />
 		<Unit filename="src/main.cpp" />
+		<Unit filename="src/networking.cpp" />
 		<Extensions>
 			<code_completion />
 			<debugger />

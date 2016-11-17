@@ -5,7 +5,7 @@
  *  execution off to the primary Game object.
  */
 #include "Game.hpp"
-
+#include <thread>
 #ifdef DEBUG
 #include <iostream>
 #endif // DEBUG
