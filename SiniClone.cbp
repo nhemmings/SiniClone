@@ -59,7 +59,6 @@
 					<Add library="winmm" />
 					<Add library="gdi32" />
 					<Add library="tacoTruck-s" />
-					<Add directory="res/tacoTruck/bin/Release" />
 				</Linker>
 			</Target>
 		</Build>
