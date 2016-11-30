@@ -135,10 +135,7 @@ void Game::startGame(const GameType newGameType) {
         circle_x = rand() % 760 + 30;
         circle_y = rand() % 560 + 30;
         circles[i].setPosition(circle_x, circle_y);
-
-        std::cout << "Circle " << i+1 << ": X: " << circle_x << "\tY: " << circle_y << std::endl;
     }
-    std::cout << std::endl;
     m_isRunning = true;
 }
 
