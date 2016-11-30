@@ -104,8 +104,12 @@ void Game::handleKeyEvent(sf::Event & event) {
         }
     }
     // KeyReleased
+    else if (event.type == sf::Event::KeyReleased) {
+        // stub
+    }
+    // Invalid event
     else {
-
+        // TODO: Throw exception
     }
 }
 
