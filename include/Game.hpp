@@ -28,6 +28,7 @@ private:
     void startGame(const GameType newGameType);
     void runServerFrame(const sf::Time & dt);
     void runClientFrame(const sf::Time & dt, sf::RenderWindow & rwindow);
+    void handleKeyEvent(sf::Event & event); /**< Handle KeyPressed and KeyReleased Events*/
 
     void dtSMAinit(const sf::Time & dtIdeal);
     sf::Time dtSMAupdate(const sf::Time & dtCurrent);

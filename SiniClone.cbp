@@ -62,6 +62,10 @@
 			</Target>
 		</Build>
 		<Compiler>
+			<Add option="-Wnon-virtual-dtor" />
+			<Add option="-Wunreachable-code" />
+			<Add option="-Wzero-as-null-pointer-constant" />
+			<Add option="-Wmain" />
 			<Add option="-Wall" />
 			<Add option="-std=c++11" />
 			<Add directory="include" />

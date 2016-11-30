@@ -40,35 +40,24 @@ int Game::run() {
         sf::Event event;
         while (m_window.pollEvent(event))
         {
-            if (event.type == sf::Event::Closed)
-                m_window.close();
-            else if (event.type == sf::Event::Resized) {
-                m_mainView.setCenter(m_window.getView().getCenter());
-                m_mainView.setSize(event.size.width, event.size.height);
-                m_window.setView(m_mainView);
-            }
-            else if (event.type == sf::Event::KeyPressed) {
-                if (event.key.code == sf::Keyboard::Escape)
+            switch (event.type) {
+
+                // window closed
+                case sf::Event::Closed:
                     m_window.close();
-                else if (event.key.code == sf::Keyboard::W) {
-                    m_mainView.move(0, -1);
-                }
-                else if (event.key.code == sf::Keyboard::A) {
-                    m_mainView.move(-1, 0);
-                }
-                else if (m_isRunning && event.key.code == sf::Keyboard::S) {
-                    m_mainView.move(0, 1);
-                }
-                else if (event.key.code == sf::Keyboard::D) {
-                    m_mainView.move(1, 0);
-                }
-                else if (event.key.code == sf::Keyboard::R) {
-                    m_isRunning = !m_isRunning;
-                    startGame(SinglePlayer);
-                }
-                /*else if (!m_isRunning && event.key.code == sf::Keyboard::M) {
-                    startGame(MultiPlayer);
-                }*/
+                    break;
+
+                // window resized
+                case sf::Event::Resized:
+                    m_mainView.setCenter(m_window.getView().getCenter());
+                    m_mainView.setSize(event.size.width, event.size.height);
+                    m_window.setView(m_mainView);
+                    break;
+
+                case sf::Event::KeyPressed:
+                case sf::Event::KeyReleased:
+                    handleKeyEvent(event);
+                    break;
             }
         }
 
@@ -103,6 +92,21 @@ void Game::runClientFrame(const sf::Time & dt, sf::RenderWindow & rwindow) {
     }
 
     rwindow.display();
+}
+
+void Game::handleKeyEvent(sf::Event & event) {
+    // KeyPressed
+    if (event.type == sf::Event::KeyPressed) {
+        switch (event.key.code) {
+            case sf::Keyboard::Escape:
+            m_window.close();
+            break;
+        }
+    }
+    // KeyReleased
+    else {
+
+    }
 }
 
 void Game::dtSMAinit(const sf::Time & dtIdeal) {
